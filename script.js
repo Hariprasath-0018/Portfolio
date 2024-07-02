@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li a');
     const header = document.querySelector('header');
-    const mainContent = document.querySelector('main'); // Select the main content
+    const mainContent = document.querySelector('main');
     const profilePic = document.querySelector('.profile-pic img');
     const lapPic = document.querySelector('.lap-pic img');
 
@@ -13,12 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.toggle('expanded');
         
         const isExpanded = navLinks.classList.contains('show');
-        mainContent.style.marginTop = isExpanded ? '200px' : '0'; // Adjust this value based on the height of your header when expanded
+        mainContent.style.marginTop = isExpanded ? '200px' : '0';
         
         // Adjust the top values of the images
-        const adjustment = isExpanded ? '200px' : '0';
-        profilePic.style.top = isExpanded ? 'calc(6em + 200px)' : '6em'; // Adjust this value based on the height of your header when expanded
-        lapPic.style.top = isExpanded ? 'calc(10em + 200px)' : '10em'; // Adjust this value based on the height of your header when expanded
+        profilePic.style.top = isExpanded ? 'calc(6em + 200px)' : '6em';
+        lapPic.style.top = isExpanded ? 'calc(10em + 200px)' : '10em';
     });
 
     // Close the hamburger menu when a nav item is clicked
@@ -38,11 +37,28 @@ document.addEventListener("DOMContentLoaded", function() {
     navItems.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1); // Extract the id from href
+            const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target section
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
+
+    // Letter-by-letter animation for h1
+    const text = document.querySelector(".animated-text");
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = "";
+    for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += `<span>${splitText[i] === " " ? "&nbsp;" : splitText[i]}</span>`;
+    }
+
+    const spans = text.querySelectorAll('span');
+    spans.forEach((span, index) => {
+        span.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+
+
 });
