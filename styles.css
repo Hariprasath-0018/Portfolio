@@ -1,4 +1,5 @@
-body {
+body 
+{
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -94,6 +95,7 @@ nav ul li a.active, nav ul li a:hover {
     top: 100px;
     height: 390px;
     flex-wrap: wrap;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 .profile-pic img {
@@ -104,6 +106,7 @@ nav ul li a.active, nav ul li a:hover {
     left: 70px;
     top: 8em;
     z-index: 1;
+    animation: slideInFromLeft 2s ease-in-out;
 }
 
 .lap-pic img {
@@ -114,20 +117,20 @@ nav ul li a.active, nav ul li a:hover {
     right: 60px;
     top: 12em;
     z-index: 1;
-}
-
-.hero-content {
-    max-width: 600px;
-    text-align: center;
+    animation: slideInFromRight 2s ease-in-out;
 }
 
 .hero-content h1 {
+    font-size: 2.5em;
     margin: 0;
-    font-size: 36px;
+    display: inline-block;
+    justify-content: center;
 }
 
 .hero-content p {
     font-size: 18px;
+    margin: 20px 0;
+    animation: fadeInUp 2s ease-in-out;
 }
 
 .learn-more {
@@ -138,6 +141,47 @@ nav ul li a.active, nav ul li a:hover {
     color: white;
     text-decoration: none;
     border-radius: 20px;
+    animation: fadeIn 3s ease-in-out;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.learn-more:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.animated-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: letterAnimation 0.5s forwards;
+}
+
+@keyframes letterAnimation {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive navigation */
@@ -182,7 +226,7 @@ nav ul li a.active, nav ul li a:hover {
     }
 
     .hero-content h1 {
-        font-size: 48px;
+        font-size: 58px;
     }
 
     .profile-pic img {
@@ -201,7 +245,7 @@ nav ul li a.active, nav ul li a:hover {
     }
 
     .hero-content {
-        text-align: left;
+        text-align: center;
     }
 }
 
@@ -308,7 +352,7 @@ nav ul li a.active, nav ul li a:hover {
 .skills {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .skill {
@@ -320,6 +364,7 @@ nav ul li a.active, nav ul li a:hover {
     margin: 50px 20px;
     margin-top: 70px;
     text-align: center;
+
 }
 
 .skill h2 {
@@ -341,6 +386,9 @@ nav ul li a.active, nav ul li a:hover {
     align-items: center;
     text-align: center;
     box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out; /* Adjust timing and animation type as needed */
+    animation-fill-mode: forwards; /* Ensures the element stays visible at the end of the animation */
+    opacity: 0;
 }
 
 .skill-image {
@@ -378,7 +426,24 @@ nav ul li a.active, nav ul li a:hover {
         border-radius: 20px; /* Resetting to non-circular on small screens */
     }
 }
+.skill-block:nth-child(1) {
+    animation-delay: 0.2s;
+}
 
+.skill-block:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.skill-block:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.skill-block:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.skill-block.show {
+    opacity: 1;
+}
 /* Example CSS for projects section */
 .projects {
     padding: 50px;
