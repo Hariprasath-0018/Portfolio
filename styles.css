@@ -709,8 +709,7 @@ nav ul li a.active, nav ul li a:hover {
         margin-bottom: 20px;
     }
 
-    .project-images {
-        grid-template-columns: 1fr; /* Single column layout for images on small screens */
+    .project-images { /* Single column layout for images on small screens */
         width:auto;
         height: auto;
     }
