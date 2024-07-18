@@ -711,6 +711,8 @@ nav ul li a.active, nav ul li a:hover {
 
     .project-images {
         grid-template-columns: 1fr; /* Single column layout for images on small screens */
+        width:auto;
+        height: auto;
     }
 }
 /* Example CSS for contact section */
