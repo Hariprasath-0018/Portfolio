@@ -565,25 +565,29 @@ nav ul li a.active, nav ul li a:hover {
 }
 
 /* Example CSS for projects section */
+/* Existing CSS code here */
 
 .slider {
     position: relative;
     overflow: hidden;
-    width: 300px; /* Adjusted width for images */
+    width: 100%; /* Make the slider width responsive */
+    max-width: 300px; /* Max width for larger screens */
     margin: auto;
-    
+    box-sizing: border-box;
 }
 
 .project-images {
-    flex: 1;
+    display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 400%; /* Adjust width to accommodate all images */
+    width: 100%; /* Adjust width to be responsive */
 }
 
 .project-images img {
     width: 100%; /* Image takes up the entire container */
     flex-shrink: 0;
     display: none; /* Hide all images initially */
+    object-fit: cover; /* Maintain aspect ratio */
+    box-sizing: border-box;
 }
 
 .project-images img.active {
@@ -597,7 +601,7 @@ nav ul li a.active, nav ul li a:hover {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: rgb(8, 57, 19);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -620,25 +624,23 @@ nav ul li a.active, nav ul li a:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
-
-
 .projects {
     padding: 50px;
     background-color: #000000;
-    padding: 50px;
     border: 2px solid #ACFDB0;
     border-radius: 20px;
     margin: 50px 20px;
     margin-top: 70px;
     text-align: center;
     flex-direction: row;
+    box-sizing: border-box;
 }
 
 .projects h2 {
     text-align: center;
     font-size: 46px;
     margin-bottom: 40px;
-    color:  #ACFDB0;
+    color: #ACFDB0;
 }
 
 .project-block {
@@ -649,8 +651,9 @@ nav ul li a.active, nav ul li a:hover {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color:  #ACFDB0;
-    border: 3px solid  #000000;
+    background-color: #ACFDB0;
+    border: 3px solid #000000;
+    box-sizing: border-box;
 }
 
 .project-description {
@@ -660,44 +663,44 @@ nav ul li a.active, nav ul li a:hover {
     background-color: #000000;
     border-radius: 10px;
     box-shadow: 15px 15px 15px #312e2e;
-    border: 2px solid  #67ff6e;
+    border: 2px solid #67ff6e;
+    box-sizing: border-box;
 }
 
 .project-description h3 {
     margin-top: 0;
-    color:  #ACFDB0;
+    color: #ACFDB0;
 }
 
-.project-description p {
-    text-align: justify;
-    color:  #ACFDB0;
-}
-
+.project-description p,
 .project-description ul {
     text-align: justify;
-    color:  #ACFDB0;
+    color: #ACFDB0;
 }
 
 .project-images {
     display: flex;
     flex: 1;
-    text-align:justify;
+    text-align: justify;
     align-content: center;
     background-color: #000000;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid  #67ff6e;
+    border: 2px solid #67ff6e;
+    box-sizing: border-box;
 }
 
 .project-images img {
     max-width: 100%; /* Adjusted for responsiveness */
-    width: 270px;
-    height: 400px;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
     border: 3px solid #ACFDB0;
+    box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Media queries for smaller screens */
 @media (max-width: 768px) {
     .project-block {
         flex-direction: column; /* Stack items vertically on smaller screens */
@@ -708,12 +711,21 @@ nav ul li a.active, nav ul li a:hover {
         margin-bottom: 20px;
     }
 
-    .project-images { /* Single column layout for images on small screens */
-         width:auto;
-        height: auto;
-        
+    .project-images {
+        grid-template-columns: 1fr; /* Single column layout for images on small screens */
     }
 }
+
+@media (max-width: 480px) {
+    .slider {
+        max-width: 100%; /* Full width on very small screens */
+    }
+
+    .project-images img {
+        width: 100%; /* Ensure images fit within the container */
+    }
+}
+
 /* Example CSS for contact section */
 .contact {
     padding: 50px;
