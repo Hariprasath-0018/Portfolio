@@ -679,9 +679,10 @@ nav ul li a.active, nav ul li a:hover {
 }
 
 .project-images {
-    gap: 10px;
+    display: flex;
     flex: 1;
-    text-align: center;
+    text-align:justify;
+    align-content: center;
     background-color: #000000;
     padding: 10px;
     border-radius: 10px;
