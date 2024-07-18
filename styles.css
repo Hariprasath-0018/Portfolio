@@ -563,8 +563,8 @@ nav ul li a.active, nav ul li a:hover {
 .skill-block.show {
     opacity: 1;
 }
+
 /* Example CSS for projects section */
-/* Existing CSS code here */
 
 .slider {
     position: relative;
@@ -575,7 +575,7 @@ nav ul li a.active, nav ul li a:hover {
 }
 
 .project-images {
-    display: flex;
+    flex: 1;
     transition: transform 0.5s ease-in-out;
     width: 400%; /* Adjust width to accommodate all images */
 }
@@ -679,8 +679,6 @@ nav ul li a.active, nav ul li a:hover {
 }
 
 .project-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     flex: 1;
     text-align: center;
