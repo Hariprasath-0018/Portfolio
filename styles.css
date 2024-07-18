@@ -1,10 +1,26 @@
-body 
-{
+body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: rgb(0, 0, 0);
+    height: 100vh;
+    background-color: #000000;
+    background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.07) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(94, 225, 100, 0.13) 50%, transparent 50%),
+        linear-gradient(90deg, transparent 50%, rgba(57, 222, 68, 0.17) 50%),
+        linear-gradient(90deg, transparent 50%, rgba(23, 104, 31, 0.19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+    animation: slideEffect 12s linear infinite; /* Increased duration for slower speed */
 }
+
+@keyframes slideEffect {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 100% 0, 100% 0, 100% 0, 100% 0; /* Slide to the right */
+    }
+}
+
+
 
 header {
     display: flex;
@@ -121,7 +137,7 @@ nav ul li a.active, nav ul li a:hover {
 }
 
 .hero-content h1 {
-    font-size: 2.2em;
+    font-size: 2em;
     margin: 0;
     display: inline-block;
     justify-content: center;
@@ -272,23 +288,123 @@ nav ul li a.active, nav ul li a:hover {
 }
 
 /* About Me Section */
+/* About Me Section */
 .about-me {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
     padding: 50px;
-    border: 2px solid #ACFDB0;
     border-radius: 20px;
     margin: 50px 20px;
     margin-top: 170px;
-    flex-wrap: wrap;
+    position: relative; /* Required for positioning the animated border */
+    overflow: hidden; /* Ensure the border stays within bounds */
 }
 
+/* Border Animation */
+.top,
+.bottom,
+.right,
+.left {
+    position: absolute;
+    border-radius: 100vmax;
+    opacity: 0; /* Start hidden */
+}
+
+.top {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent 50%, rgb(49, 255, 66), rgb(49, 255, 66));
+    animation: animateTop 1.5s ease-in-out infinite; /* Slower */
+}
+
+.bottom {
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: linear-gradient(90deg, rgb(57, 255, 20), rgb(57, 255, 20), transparent 50%);
+    animation: animateBottom 1.5s ease-in-out infinite; /* Slower */
+}
+
+.right {
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 0;
+    background: linear-gradient(180deg, transparent 30%, rgb(49, 255, 66),rgb(57, 255, 20));
+    animation: animateRight 1.5s ease-in-out infinite; /* Slower */
+}
+
+.left {
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    height: 0;
+    background: linear-gradient(180deg, rgb(49, 255, 66), rgb(57, 255, 20), transparent 70%);
+    animation: animateLeft 1.5s ease-in-out infinite; /* Slower */
+}
+
+/* Keyframes for Border Animation */
+@keyframes animateTop {
+    25% {
+        width: 100%;
+        opacity: 1;
+    }
+    30%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateBottom {
+    0%, 50% {
+        opacity: 0;
+        width: 0;
+    }
+    75% {
+        opacity: 1;
+        width: 100%;
+    }
+    76%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateRight {
+    0%, 25% {
+        opacity: 0;
+        height: 0;
+    }
+    50% {
+        opacity: 1;
+        height: 100%;
+    }
+    55%, 100% {
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes animateLeft {
+    0%, 75% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+/* Content Styles */
 .about-content {
     flex: 1;
     max-width: 600px;
     color: #ACFDB0;
+    position: relative; /* Keep content above the animated border */
+    z-index: 1; /* Ensure content is above the borders */
 }
 
 .about-content h2 {
@@ -305,6 +421,8 @@ nav ul li a.active, nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Ensure image is above the border */
+    z-index: 1;
 }
 
 .about-image img {
@@ -312,6 +430,7 @@ nav ul li a.active, nav ul li a:hover {
     height: auto;
     border-radius: 10px;
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -445,6 +564,64 @@ nav ul li a.active, nav ul li a:hover {
     opacity: 1;
 }
 /* Example CSS for projects section */
+/* Existing CSS code here */
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 300px; /* Adjusted width for images */
+    margin: auto;
+    
+}
+
+.project-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%; /* Adjust width to accommodate all images */
+}
+
+.project-images img {
+    width: 100%; /* Image takes up the entire container */
+    flex-shrink: 0;
+    display: none; /* Hide all images initially */
+}
+
+.project-images img.active {
+    display: block; /* Show only the active image */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 1; /* Ensure arrows are on top */
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+
 .projects {
     padding: 50px;
     background-color: #000000;
@@ -473,7 +650,6 @@ nav ul li a.active, nav ul li a:hover {
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color:  #ACFDB0;
-    box-shadow: 5px 5px 10px #bdf7bf;
     border: 3px solid  #000000;
 }
 
@@ -516,8 +692,8 @@ nav ul li a.active, nav ul li a:hover {
 
 .project-images img {
     max-width: 100%; /* Adjusted for responsiveness */
-    width: 300px;
-    height: 380px;
+    width: 270px;
+    height: 400px;
     border-radius: 10px;
     border: 3px solid #ACFDB0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
