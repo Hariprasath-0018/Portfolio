@@ -59,6 +59,42 @@ document.addEventListener("DOMContentLoaded", function() {
         span.style.animationDelay = `${index * 0.1}s`;
     });
     
+    const sliders = document.querySelectorAll('.slider');
+    const slideIndices = Array.from({ length: sliders.length }, () => 0);
 
+    function showSlides(sliderIndex, n) {
+        const slides = sliders[sliderIndex].querySelectorAll(".project-images img");
+        
+        if (n >= slides.length) {
+            slideIndices[sliderIndex] = 0;
+        }
+        if (n < 0) {
+            slideIndices[sliderIndex] = slides.length - 1;
+        }
+
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if (index === slideIndices[sliderIndex]) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide(sliderIndex) {
+        slideIndices[sliderIndex]++;
+        showSlides(sliderIndex, slideIndices[sliderIndex]);
+    }
+
+    function prevSlide(sliderIndex) {
+        slideIndices[sliderIndex]--;
+        showSlides(sliderIndex, slideIndices[sliderIndex]);
+    }
+
+    sliders.forEach((slider, index) => {
+        showSlides(index, slideIndices[index]);
+    });
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
 
 });
