@@ -708,8 +708,8 @@ nav ul li a.active, nav ul li a:hover {
     }
 
     .project-images { /* Single column layout for images on small screens */
-        width:auto;
-        height: auto;
+         width:200px;
+        height: 300px;
     }
 }
 /* Example CSS for contact section */
