@@ -39,13 +39,17 @@
         <div class="hero">
             <div class="hero-content">
                 <h1 class="animated-text">Welcome to My Portfolio</h1>
-                <p>Hello! I'm Hariprasath, a passionate and innovative Developer, dedicated to transforming my ideas into stunning applications.</p>
+                <p>Hello! I am Hariprasath, a passionate and innovative Developer, dedicated to transforming my ideas into stunning applications.</p>
                 <a href="#about-section" class="learn-more">Learn More</a>
             </div>
         </div>
         </section>
 
         <section id="about-section" class="about-me"> 
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="left"></div>
             <div class="about-content">
                 <h2>About Me</h2>
                 <p> Aspiring IT student passionate about app development. Eager to apply programming skills and 
@@ -150,18 +154,19 @@
                                 <li>Mongo DB</li>
                                 <li>Zoho Catalyst(Back End)</li>
                             </ul> 
-                        
                         </p>
                     </div>
                     
-                    <div class="project-images">
-                        <img src="assets/dms1.jpg" alt="Project Image 5">
-                        <img src="assets/dms2.jpg" alt="Project Image 5">
-                        <img src="assets/dms3.jpg" alt="Project Image 5">
-                        <img src="assets/dms4.jpg" alt="Project Image 5">
-                    
-                   </div>
-                    
+                    <div class="slider">
+                        <a class="prev" onclick="prevSlide(0)">&#10094;</a>
+                        <div class="project-images">
+                            <img src="assets/dms1.jpg" alt="Project Image 1">
+                            <img src="assets/dms2.jpg" alt="Project Image 2">
+                            <img src="assets/dms3.jpg" alt="Project Image 3">
+                            <img src="assets/dms4.jpg" alt="Project Image 4">
+                        </div>
+                        <a class="next" onclick="nextSlide(0)">&#10095;</a>
+                    </div>
                 </div>
                 <div class="project-block">
                     <div class="project-description">
@@ -180,12 +185,17 @@
                             </ul> 
                         </p>
                     </div>
-                    <div class="project-images">
-                        <img src="assets/rbs1.jpg" alt="Project Image 5">
-                        <img src="assets/rbs2.jpg" alt="Project Image 5">
+                    <div class="slider">
+                        <a class="prev" onclick="prevSlide(1)">&#10094;</a>
+                        <div class="project-images">
+                            <img src="assets/rbs1.jpg" alt="Project Image 1">
+                            <img src="assets/rbs2.jpg" alt="Project Image 2">
+                        </div>
+                        <a class="next" onclick="nextSlide(1)">&#10095;</a>
                     </div>
                 </div>
-            </section>
+            </section>            
+            
 
             <section id="contact-section" class="contact">
                 <div class="contact-content">
