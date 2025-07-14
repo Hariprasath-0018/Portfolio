@@ -2,13 +2,8 @@ body {
     margin: 0;
     height: 100vh;
     background-color: #000000;
-    background-image: 
-        linear-gradient(90deg, rgba(0, 0, 0, 0.07) 50%, transparent 50%),
-        linear-gradient(90deg, rgba(94, 225, 100, 0.13) 50%, transparent 50%),
-        linear-gradient(90deg, transparent 50%, rgba(57, 222, 68, 0.17) 50%),
-        linear-gradient(90deg, transparent 50%, rgba(23, 104, 31, 0.19) 50%);
-    background-size: 13px, 29px, 37px, 53px;
-    animation: slideEffect 12s linear infinite; /* Increased duration for slower speed */
+   
+     font-family: 'DM Sans', sans-serif;
 }
 
 @keyframes slideEffect {
@@ -27,7 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #121212;
+    background-color: #000000;
     flex-wrap: wrap;
     position: relative;
 
@@ -109,7 +104,7 @@ nav ul li a.active, nav ul li a:hover {
     border-radius: 20px;
     margin: 50px 20px; /* Adjusted margin for better alignment */
     top: 100px;
-    height: 390px;
+    height: 250px;
     flex-wrap: wrap;
     animation: fadeInUp 1.5s ease-in-out;
 }
@@ -476,7 +471,7 @@ nav ul li a.active, nav ul li a:hover {
 
 .skill {
     color: #ACFDB0;
-    background-color: #ACFDB0;
+    background-color: #000000;
     padding: 50px;
     border: 2px solid #ACFDB0;
     border-radius: 20px;
@@ -488,81 +483,97 @@ nav ul li a.active, nav ul li a:hover {
 
 .skill h2 {
     font-size: 46px;
+    color: #b4ffb6;
+}
+.skill p {
+    font-size: 12px;
     color: #000000;
 }
 
-.skill-block {
-    width: 600px;
-    margin: 18px;
-    background-color: #000000;
-    border: 2px solid  #67ff6e;
-    border-radius: 10px;
-    color: #ACFDB0;
-    padding: 20px;
-    display: flex;
-    box-shadow: 15px 15px 15px #000000;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    animation: fadeIn 1s ease-in-out; /* Adjust timing and animation type as needed */
-    animation-fill-mode: forwards; /* Ensures the element stays visible at the end of the animation */
-    opacity: 0;
+.skills-3d-wrapper {
+  width: 100%;
+  height: 500px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: black;
+  
 }
 
-.skill-image {
-    text-align: center;
-    margin-bottom: 10px;
+.skills-3d-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 500px;
+  top:110px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.skill-block {
+  position: absolute;
+  width: 220px;
+  height: 260px;
+  background: #fff;
+  color: #000;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  text-align: center;
+  opacity: 0.5;
+  transform-style: preserve-3d;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.skill-block.active {
+  opacity: 1;
+  z-index: 10;
 }
 
 .skill-image img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #ffffff; /* Adjust border color and size as needed */
-    box-shadow: 0 0 10px #000000; /* Optional: Add shadow */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+@media (max-width: 1200px) {
+  .skills-3d-ring {
+    left: 300px;
+  }
+  .skill-block {
+  width: 220px;
+  }
 }
 
-.skill-content {
-    text-align: center;
-}
-
-.skill-content h3, .skill-content p {
-    margin: 0;
-    padding: 0;
-}
-
-.skill-content p {
-    text-align: justify;
-    font-size: 14px;
-    margin-top: 10px;
+@media (max-width: 992px) {
+  .skills-3d-ring {
+    left: 100px;
+  }
+  .skill-block {
+  width: 150px;
+  }
 }
 
 @media (max-width: 768px) {
-    .skill-block {
-        width: 100%;
-        height: auto;
-        border-radius: 20px; /* Resetting to non-circular on small screens */
-    }
+  .skills-3d-ring {
+    left: 50px;
+    transform: scale(0.8); /* optional shrink for smaller devices */
+  }
+  .skill-block {
+  width: 150px;
+  }
 }
-.skill-block:nth-child(1) {
-    animation-delay: 0.2s;
+@media (max-width: 368px) {
+  .skills-3d-ring {
+    left: -10px;
+    transform: scale(0.6); /* optional shrink for smaller devices */
+  }
+  .skill-block {
+  width: 150px;
+  }
 }
 
-.skill-block:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.skill-block:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.skill-block:nth-child(4) {
-    animation-delay: 0.8s;
-}
-.skill-block.show {
-    opacity: 1;
-}
 
 /* Example CSS for projects section */
 /* Existing CSS code here */
@@ -601,7 +612,7 @@ nav ul li a.active, nav ul li a:hover {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: rgb(8, 57, 19);
+    color: rgb(89, 167, 105);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -725,6 +736,7 @@ nav ul li a.active, nav ul li a:hover {
         width: 100%; /* Ensure images fit within the container */
     }
 }
+
 
 /* Example CSS for contact section */
 .contact {
