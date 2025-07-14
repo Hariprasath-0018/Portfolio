@@ -98,3 +98,46 @@ document.addEventListener("DOMContentLoaded", function() {
     window.prevSlide = prevSlide;
 
 });
+const ring = document.getElementById('skillsRing');
+  const cards = ring.querySelectorAll('.skill-block');
+  const count = cards.length;
+  const radius = Math.min(window.innerWidth / 2.5, 350);
+
+  let activeIndex = 0;
+
+  function updateCarousel() {
+    for (let i = 0; i < count; i++) {
+      const card = cards[i];
+      const offset = ((i - activeIndex + count) % count);
+
+      let rotationY, translateZ;
+
+      if (offset === 0) {
+        rotationY = 0;
+        translateZ = radius;
+        card.classList.add("active");
+      } else if (offset === 1) {
+        rotationY = 90;
+        translateZ = radius;
+        card.classList.remove("active");
+      } else if (offset === 2) {
+        rotationY = 180;
+        translateZ = radius;
+        card.classList.remove("active");
+      } else if (offset === 3) {
+        rotationY = -90;
+        translateZ = radius;
+        card.classList.remove("active");
+      }
+
+      card.style.transform = `rotateY(${rotationY}deg) translateZ(${translateZ}px)`;
+    }
+  }
+
+  updateCarousel();
+
+  // Rotate every 3 seconds
+  setInterval(() => {
+    activeIndex = (activeIndex + 1) % count;
+    updateCarousel();
+  }, 3000);
