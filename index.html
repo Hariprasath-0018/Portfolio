@@ -3,213 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Hariprasath N - Professional Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="assets/logopic3.jpg" alt="Hariprasath N">
-            Hariprasath N
-        </div>
-
-        <nav>
+        <nav class="nav-container">
+            <div class="logo">Hariprasath N</div>
             <ul class="nav-links">
-                <li><a href="#home-section" class="active">Home</a></li>
-                <li><a href="#about-section">About Me</a></li>
-                <li><a href="#skillsid">Skills</a></li>
-                <li><a href="#projects-section">Projects</a></li>
-                <li><a href="#contact-section">Contact</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
-        <div class="hamburger-menu">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
     </header>
-    <main>
-        <section id="home-section" class="home">
-        <div class="profile-pic">
-            <img src="assets/recentpic.jpeg.jpg" alt="Hariprasath N">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
         </div>
-        <div class="lap-pic">
-            <img src="assets/lappic2.jpeg" alt="Hariprasath N">
-        </div>
-        <div class="hero">
-            <div class="hero-content">
-                <h1 class="animated-text">Welcome to My Portfolio</h1>
-                <p>Hello! I am Hariprasath, a passionate and innovative Developer, dedicated to transforming my ideas into stunning applications.</p>
-                <a href="#about-section" class="learn-more">Learn More</a>
+        <div class="hero-content">
+            <h1 class="hero-title">Hariprasath N</h1>
+            <p class="hero-subtitle">Full Stack Developer</p>
+            <p class="hero-description">
+                Engineering next-gen digital platforms with expertise in full-stack and IoT integration.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
-        </section>
-
-        <section id="about-section" class="about-me"> 
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="right"></div>
-            <div class="left"></div>
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p> Aspiring IT student passionate about app development. Eager to apply programming skills and 
-                    creativity in a dynamic role. Seeking opportunities to contribute to innovative mobile projects, 
-                    while continuously enhancing development expertise in a collaborative environment.</p>
-                    <div class="education">
-                        <h3>Educational Background</h3>
-                        <ul>
-                            <li>
-                                <strong>B.Tech (Information Technology)</strong><br>
-                                Velammal College of Engineering and Technology<br>
-                                2021 – Present | Madurai, India<br>
-                                CGPA: 8.67
-                            </li>
-                            <li>
-                                <strong>Higher Secondary Education</strong><br>
-                                Annamalaiyaar Matriculation Higher Secondary School<br>
-                                2021 | Madurai, India<br>
-                                Percentage: 89.15%
-                            </li>
-                            <li>
-                                <strong>High School Education</strong><br>
-                                Annamalaiyaar Matriculation Higher Secondary School<br>
-                                2019 | Madurai, India<br>
-                                Percentage: 86.2%
-                            </li>
-                        </ul>
-                    </div>
+        <div class="hero-laptop">
+            <div class="laptop-container" id="laptop3d">
+                <div class="laptop-screen"></div>
+                <div class="laptop-base"></div>
             </div>
-            <div class="about-image">
-                <img src="assets/developerimg.jpg" alt="About Me Image">
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="skill" id="skillsid">
-            <h2>Skills</h2>
-            <section id="skills-section" class="skills-3d-wrapper">
-  <div class="skills-3d-ring" id="skillsRing">
-    <div class="skill-block"> <!-- Index 0 -->
-      <div class="skill-image">
-        <img src="assets/frontpng.png" alt="Front End">
-      </div>
-      <h3>Front End Development</h3>
-      <p>Proficient in HTML, CSS, and JavaScript for creating responsive and interactive web pages.</p>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-grid">
+            <div class="about-content reveal">
+                <h3>Professional Software Engineer</h3>
+                <p>
+                    I'm a passionate software engineer with 8 months of internship experience and 3 months of professional experience in full-stack development, 
+                    specializing in creating scalable applications that solve real-world problems. 
+                    My expertise spans modern web technologies, mobile app development, and IoT integrations.
+                </p>
+                <p>
+                    Currently pursuing B.Tech in Information Technology at Velammal College of Engineering and Technology, 
+                    I combine academic knowledge with practical experience to deliver high-quality solutions.
+                </p>
 
-    <div class="skill-block"> <!-- Index 1 -->
-      <div class="skill-image">
-        <img src="assets/javapng.png" alt="Programming">
-      </div>
-      <h3>Programming Skills</h3>
-      <p>Experience with C and Java, including algorithm development and application programming.</p>
-
-    </div>
-
-    <div class="skill-block"> <!-- Index 2 -->
-      <div class="skill-image">
-        <img src="assets/designpng.jpg" alt="Design">
-      </div>
-      <h3>Designing</h3>
-              <p>Proficient in Canva for creating visually appealing graphics and designs.</p>
-
-       
-    </div>
-
-    <div class="skill-block"> <!-- Index 3 -->
-      <div class="skill-image">
-        <img src="assets/apppng.png" alt="App Dev">
-      </div>
-      <h3>App Development</h3>
-      <p>Skilled in React Native for building cross-platform mobile applications with native-like performance.</p>
-    </div>
-  </div>
-</section>
-
-
-
-            </div>
-        
-            <section id="projects-section" class="projects">
-                <h2>Projects</h2>
-                <div class="project-block">
-                    <div class="project-description">
-                        <h3>Defaulter Monitoring System</h3>
-                        <p> Developed a React Native Expo mobile
-                            app for our college to efficiently scan
-                            student ID cards, retrieve roll numbers,
-                            and mark defaulters in MongoDB.Deployed the
-                            backend on Zoho Catalyst, making it
-                            accessible to all users.Technologies
-                            used 
-                            <ul>
-                                <li>React-Native</li>
-                                <li>Express JS</li>
-                                <li>Node JS</li>
-                                <li>Mongo DB</li>
-                                <li>Zoho Catalyst(Back End)</li>
-                            </ul> 
-                        </p>
-                    </div>
-                    
-                    <div class="slider">
-                        <a class="prev" onclick="prevSlide(0)">&#10094;</a>
-                        <div class="project-images">
-                            <img src="assets/dms1.jpg" alt="Project Image 1">
-                            <img src="assets/dms2.jpg" alt="Project Image 2">
-                            <img src="assets/dms3.jpg" alt="Project Image 3">
-                            <img src="assets/dms4.jpg" alt="Project Image 4">
+                <!-- Education Timeline -->
+                <!-- <div class="education-section">
+                    <h4 style="color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.3rem;">Educational Background</h4>
+                    <div class="education-item">
+                        <div class="education-content">
+                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">B.Tech (Information Technology)</h5>
+                            <p style="color: var(--text-secondary); margin: 0.2rem 0;">Velammal College of Engineering and Technology</p>
+                            <p style="color: var(--text-secondary); margin: 0.2rem 0;">2021 – Present | Madurai, India</p>
+                            <p style="color: var(--primary); font-weight: 600;">CGPA: 8.67</p>
                         </div>
-                        <a class="next" onclick="nextSlide(0)">&#10095;</a>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-content">
+                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">Higher Secondary Education (12th)</h5>
+                            <p style="color: var(--text-secondary); margin: 0.2rem 0;">Annamalaiyaar Matriculation Higher Secondary School</p>
+                            <p style="color: var(--text-secondary); margin: 0.2rem 0;">2021 | Madurai, India</p>
+                            <p style="color: var(--primary); font-weight: 600;">Percentage: 89.15%</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-content">
+                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">High School Education (10th)</h5>
+                            <p style="color: var(--text-secondary); margin: 0.2rem 0;">Annamalaiyaar Matriculation Higher Secondary School</p>
+                            <p style="color: var(--text-secondary); margin: 0.2rem 0;">2019 | Madurai, India</p>
+                            <p style="color: var(--primary); font-weight: 600;">Percentage: 86.2%</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Months Internship</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Months Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8.67</div>
+                        <div class="stat-label">CGPA</div>
                     </div>
                 </div>
-                <div class="project-block">
-                    <div class="project-description">
-                        <h3>Reverse braking system</h3>
-                        <p>As an Information Technology student,
-                            I independently created a Reverse
-                            Braking System to improve vehicle
-                            safety during reversing. This project
-                            used Arduino and an ultrasonic sensor
-                            to automatically apply brakes when
-                            obstacles were detected.Technology used
-                            <ul>
-                                <li>Sensors</li>
-                                <li>IoT</li>
-                                <li>Arduino IDE</li>
-                            </ul> 
-                        </p>
-                    </div>
-                    <div class="slider">
-                        <a class="prev" onclick="prevSlide(1)">&#10094;</a>
-                        <div class="project-images">
-                            <img src="assets/rbs1.jpg" alt="Project Image 1">
-                            <img src="assets/rbs2.jpg" alt="Project Image 2">
-                        </div>
-                        <a class="next" onclick="nextSlide(1)">&#10095;</a>
+            </div>
+            <div class="about-image reveal">
+                <div class="image-container">
+                    <div class="placeholder-image">
+                        <i class="fas fa-user fa-3x"></i>
                     </div>
                 </div>
-            </section>            
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2 class="section-title reveal">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Creating beautiful, responsive, and interactive user interfaces with modern frameworks and libraries.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Building robust server-side applications with scalable architectures and secure APIs.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Developing cross-platform mobile applications with native performance and user experience.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Expo</span>
+                        <span class="skill-tag">Native</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>IoT & Hardware</h3>
+                    <p>Integrating hardware with software solutions for smart and automated systems.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Sensors</span>
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">Embedded C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="section-title reveal">Featured Projects</h2>
             
-
-            <section id="contact-section" class="contact">
-                <div class="contact-content">
-                    <h2>Contact Me</h2>
-                    <div class="contact-info">
-                        <p>Email: <a href="mailto:hariprasath2004n@gmail.com">hariprasath2004n@gmail.com</a></p>
-                        <p>Phone: <a href="tel:+919047687132">+919047687132</a></p>
-                        <p>Address: 5/251 Sithi Vinayagar Street,Y.Othakadai,Madurai - 625107</p>
+            <div class="project-card reveal">
+                <div class="project-image">
+                    <i class="fas fa-robot fa-3x"></i>
+                    <p>AI-Powered Migration Tool</p>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">StaxChange AI</h3>
+                        </div>
+                        <!-- <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div> -->
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/hariprasath-n-b56631286" target="_blank" class="social-link">
-                            <img src="assets/linkedIn-logo.png" alt="LinkedIn" class="round-image">
-                        </a>
-                        <a href="https://github.com/Hariprasath-0018" target="_blank" class="social-link">
-                            <img src="assets/github-logo.jpeg" alt="GitHub" class="round-image">
-                        </a>
+                    <p class="project-description">
+                        Revolutionary AI-powered stack migration tool that eliminates manual grunt work. 
+                        Connect GitHub, pick a repo, choose your new stack, and let AI handle the migration seamlessly. 
+                        Making technology transitions effortless in 2025.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">GitHub API</span>
+                        <span class="tech-tag">Stack Migration</span>
+                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">Code Analysis</span>
                     </div>
                 </div>
-            </section>
-    </main>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-image">
+                    <i class="fas fa-mobile-alt fa-3x"></i>
+                    <p>Mobile Application Interface</p>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Defaulter Monitoring System</h3>
+                        </div>
+                        <!-- <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div> -->
+                    </div>
+                    <p class="project-description">
+                        A comprehensive React Native mobile application for efficient student ID scanning and defaulter 
+                        marking with MongoDB integration. Features real-time data synchronization and automated reporting.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Zoho Catalyst</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-image">
+                    <i class="fas fa-car fa-3x"></i>
+                    <p>IoT Braking System</p>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Reverse Braking System</h3>
+                        </div>
+                        <!-- <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div> -->
+                    </div>
+                    <p class="project-description">
+                        An innovative IoT-based automatic braking system using Arduino and ultrasonic sensors. 
+                        Designed for obstacle detection and automatic vehicle braking to enhance safety.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Ultrasonic Sensors</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Hardware Integration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <p class="reveal" style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                Ready to collaborate on your next project? Let's create something amazing together.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:hariprasath2004n@gmail.com">hariprasath2004n@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+919047687132">+91 90476 87132</a></p>
+                </div>
+                
+                <div class="contact-card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Madurai, Tamil Nadu<br>India - 625107</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/hariprasath-n-b56631286" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Hariprasath-0018" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/hariprasath457?t=OYEl9ukeTHnRauz_ZPWxbw&s=09" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/hariprasath.45?igsh=MWxpYWZ5ZzJ0MWtyZA==" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 Hariprasath N. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
+
 </body>
 </html>
