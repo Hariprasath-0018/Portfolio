@@ -145,7 +145,7 @@
             if (i < text.length) {
                 subtitle.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 200);
             }
         }
         
@@ -452,3 +452,4 @@
         const styleSheet = document.createElement('style');
         styleSheet.textContent = mobileStyles;
         document.head.appendChild(styleSheet);
+
